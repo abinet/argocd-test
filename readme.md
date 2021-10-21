@@ -1,3 +1,5 @@
+# Installation
+````
 k3d cluster create default --agents 3 --registry-create true
 
 kubectl create ns argocd
@@ -10,3 +12,7 @@ kubectl -n argocd apply -f argocd-ingress.yaml
 kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -dkubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d
 
 kubectl -n argocd port-forward svc/argocd-server 8080:80
+````
+
+# TODO
+- Create app of apps containing: application for namespaces, application for argocd
