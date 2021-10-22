@@ -14,4 +14,7 @@ spec:
     path: apps
     repoURL: https://github.com/abinet/argocd-test
     targetRevision: HEAD
-
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
