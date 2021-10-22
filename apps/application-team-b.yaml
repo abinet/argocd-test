@@ -1,0 +1,17 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: apps-team-b
+  namespace: argocd
+  finalizers:
+  - resources-finalizer.argocd.argoproj.io
+spec:
+  destination:
+    namespace: team-b
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    path: team-b
+    repoURL: https://github.com/abinet/argocd-test
+    targetRevision: HEAD
+
